@@ -46,7 +46,7 @@ export default function BenefitsSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 bg-[#2d6a4f]/60 border border-emerald-400/30 text-emerald-200 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-            <span>कृषी विज्ञान आधारित तथ्ये</span>
+            <span>{t("benefits_tag")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             {t("benefits_title")}
@@ -81,7 +81,7 @@ export default function BenefitsSection() {
 
                 <div className="mt-6 pt-4 border-t border-emerald-800/50 flex items-center gap-2 text-xs text-emerald-400 font-medium">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>शास्त्रीयदृष्ट्या सिद्ध फायदा</span>
+                  <span>{t("benefits_proven_badge")}</span>
                 </div>
               </div>
             );
@@ -90,9 +90,7 @@ export default function BenefitsSection() {
 
         {/* Scientific Agronomic Note */}
         <div className="mt-14 max-w-3xl mx-auto text-center bg-[#122b20] border border-emerald-800 rounded-2xl p-4 sm:p-5 text-xs text-emerald-200/90 leading-relaxed">
-          <p>
-            टीप: गांडूळ खताचे परिणाम जमिनीचा प्रकार, हवामान, सिंचन व्यवस्था व पिकाच्या स्थितीवर अवलंबून असतात. आम्ही शेतीचे कोणतेही अतिरंजित किंवा अवास्तव हमी देत नसून, नैसर्गिक सेंद्रिय घटकांचे प्रमाण वाढवून जमिनीची मूलभूत सुपीकता टिकवण्यावर भर देतो.
-          </p>
+          <p>{t("benefits_note")}</p>
         </div>
 
       </div>

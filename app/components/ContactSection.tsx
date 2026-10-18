@@ -19,7 +19,7 @@ export default function ContactSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 bg-emerald-100/90 border border-emerald-300 text-emerald-900 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
             <PhoneCall className="w-3.5 h-3.5 text-emerald-700" />
-            <span>थेट शेतकरी संपर्क</span>
+            <span>{t("contact_tag")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b4332] tracking-tight">
             {t("contact_title")}
@@ -45,7 +45,7 @@ export default function ContactSection() {
                 {BUSINESS_INFO.whatsapp}
               </p>
               <p className="text-xs text-stone-500 mt-2">
-                दर, उपलब्ध प्रमाण व थेट संवाद यासाठी त्वरित मेसेज करा.
+                {t("contact_whatsapp_desc")}
               </p>
             </div>
 
@@ -75,7 +75,7 @@ export default function ContactSection() {
                 {BUSINESS_INFO.email}
               </p>
               <p className="text-xs text-stone-500 mt-2">
-                औपचारिक चौकशी किंवा कोटेशनसाठी ईमेल पाठवा.
+                {t("contact_email_desc")}
               </p>
             </div>
 
@@ -98,21 +98,18 @@ export default function ContactSection() {
               <span className="text-xs font-semibold text-blue-800 uppercase tracking-wider">
                 {t("contact_location_label")}
               </span>
-              <p className="text-base font-bold text-stone-900 mt-1">
-                {BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.district}
-              </p>
-              <p className="text-xs text-stone-500 mt-1">
-                {BUSINESS_INFO.address.state}, {BUSINESS_INFO.address.country}
+              <p className="text-sm font-bold text-stone-900 mt-1 leading-snug">
+                {BUSINESS_INFO.address.formatted}
               </p>
               <p className="text-xs text-stone-500 mt-2">
-                संचालक: {BUSINESS_INFO.owner}
+                {t("proprietor_label")} {BUSINESS_INFO.owner}
               </p>
             </div>
 
             <div className="mt-6 pt-4 border-t border-stone-100">
               <span className="inline-flex items-center gap-1.5 text-xs text-stone-600 font-medium">
                 <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                <span>थेट फार्म व्हिजिट स्वागतार्ह</span>
+                <span>{t("contact_visit_badge")}</span>
               </span>
             </div>
           </div>
@@ -130,7 +127,7 @@ export default function ContactSection() {
                 @nava_disha_foundation_muchandi
               </p>
               <p className="text-xs text-stone-500 mt-2">
-                आमच्या कृषी उपक्रमांचे अपडेट्स पाहण्यासाठी इन्स्टाग्रामला फॉलो करा.
+                {t("contact_instagram_desc")}
               </p>
             </div>
 
@@ -156,10 +153,10 @@ export default function ContactSection() {
           </div>
           <div className="space-y-1 text-center sm:text-left">
             <h4 className="text-base font-bold text-stone-900">
-              वाहतूक व वितरण पद्धती (Transport &amp; Delivery)
+              {t("contact_transport_title")}
             </h4>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-              {t("contact_delivery_info")} — स्थानिक शेतकऱ्यांसाठी फार्मवरून थेट लोडिंग, सांगली जिल्हा व आसपासच्या परिसरासाठी स्थानिक मालवाहतूक, तसेच परगावी ऑर्डर्ससाठी योग्य कुरिअर किंवा खाजगी ट्रान्सपोर्टने माल पाठवला जातो.
+              {t("contact_transport_desc")}
             </p>
           </div>
         </div>

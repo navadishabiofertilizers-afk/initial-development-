@@ -23,11 +23,11 @@ export default function EnquiryForm() {
   const [submittedMessage, setSubmittedMessage] = useState<string>("");
 
   const productOptions = [
-    { value: "Live Earthworms (जिवंत गांडूळ)", label: "जिवंत गांडूळ (Live Earthworms)" },
-    { value: "Vermicompost (गांडूळ खत)", label: "गांडूळ खत (Vermicompost / Gandul Khat)" },
-    { value: "Starter Culture (गांडूळ स्टार्टर कल्चर)", label: "गांडूळ स्टार्टर कल्चर (Starter Culture)" },
-    { value: "Bulk Agricultural Order (घाऊक शेती ऑर्डर)", label: "घाऊक शेती ऑर्डर (Bulk Agricultural Order)" },
-    { value: "General Enquiry (इतर विचारणा)", label: "इतर चौकशी / सल्ला (General Enquiry)" }
+    { value: "Live Earthworms", label: t("form_opt_worms") as string },
+    { value: "Vermicompost", label: t("form_opt_compost") as string },
+    { value: "Starter Culture", label: t("form_opt_culture") as string },
+    { value: "Bulk Agricultural Order", label: t("form_opt_bulk") as string },
+    { value: "General Enquiry", label: t("form_opt_general") as string }
   ];
 
   const validate = (): boolean => {
@@ -37,7 +37,6 @@ export default function EnquiryForm() {
       newErrors.customerName = t("form_validation_name") as string;
     }
 
-    // Clean phone number (strip whitespace and +91 prefix for length check)
     const cleanPhone = formData.mobileNumber.replace(/\D/g, "");
     if (!cleanPhone || cleanPhone.length < 10) {
       newErrors.mobileNumber = t("form_validation_mobile") as string;
@@ -69,7 +68,6 @@ export default function EnquiryForm() {
     setSubmittedMessage(message);
     setSubmittedUrl(url);
 
-    // Open WhatsApp in new tab
     if (typeof window !== "undefined") {
       window.open(url, "_blank", "noopener,noreferrer");
     }
@@ -91,7 +89,7 @@ export default function EnquiryForm() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 bg-emerald-100/90 border border-emerald-300 text-emerald-900 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
             <Send className="w-3.5 h-3.5 text-emerald-700" />
-            <span>थेट व्हॉट्सॲप चौकशी</span>
+            <span>{t("form_tag")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b4332] tracking-tight">
             {t("form_title")}
@@ -309,7 +307,7 @@ export default function EnquiryForm() {
                       className="inline-flex items-center gap-1.5 bg-[#25D366] text-gray-950 font-bold text-xs px-4 py-2 rounded-xl shadow"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      <span>व्हॉट्सॲप पुन्हा उघडा (Open WhatsApp)</span>
+                      <span>{t("form_reopen_whatsapp")}</span>
                     </a>
 
                     <button
@@ -318,7 +316,7 @@ export default function EnquiryForm() {
                       className="inline-flex items-center gap-1.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold px-4 py-2 rounded-xl border border-stone-300"
                     >
                       <Copy className="w-3.5 h-3.5" />
-                      <span>{copied ? "कॉपी झाले! (Copied)" : "मेसेज कॉपी करा (Copy Text)"}</span>
+                      <span>{copied ? t("form_copied") : t("form_copy_text")}</span>
                     </button>
                   </div>
                 </div>

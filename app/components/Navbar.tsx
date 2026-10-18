@@ -38,12 +38,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-            <span>{BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.district}, {BUSINESS_INFO.address.state}</span>
+            <span className="truncate max-w-[280px] sm:max-w-none">{BUSINESS_INFO.address.formatted}</span>
             <span className="hidden sm:inline text-emerald-400/50">•</span>
-            <span className="hidden sm:inline text-emerald-300 font-medium">संचालक: {BUSINESS_INFO.owner}</span>
+            <span className="hidden sm:inline text-emerald-300 font-medium">{t("proprietor_label")} {BUSINESS_INFO.owner}</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="hidden md:inline text-emerald-300/80">स्थानिक व कुरिअर वितरण उपलब्ध</span>
+            <span className="hidden md:inline text-emerald-300/80">{t("nav_delivery_badge")}</span>
             <a
               href={`tel:${BUSINESS_INFO.whatsappRaw}`}
               className="hover:text-emerald-100 font-semibold flex items-center gap-1"
@@ -72,7 +72,7 @@ export default function Navbar() {
                 Nava Disha
               </span>
               <span className="text-xs uppercase tracking-widest text-emerald-300 font-medium">
-                Bio Fertilizers • जत
+                {t("nav_brand_sub")}
               </span>
             </div>
           </Link>

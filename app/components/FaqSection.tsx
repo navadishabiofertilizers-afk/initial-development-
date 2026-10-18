@@ -31,7 +31,7 @@ export default function FaqSection() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 bg-stone-100 border border-stone-300 text-stone-800 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
             <HelpCircle className="w-3.5 h-3.5 text-emerald-700" />
-            <span>नेहमीचे प्रश्न</span>
+            <span>{t("faq_tag")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b4332] tracking-tight">
             {t("faq_title")}
@@ -76,10 +76,10 @@ export default function FaqSection() {
         <div className="mt-12 bg-emerald-50 border border-emerald-200 rounded-3xl p-6 sm:p-8 text-center flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="text-left space-y-1">
             <h3 className="text-lg font-bold text-emerald-950">
-              काही वेगळा प्रश्न किंवा विशिष्ट विचारणा आहे का?
+              {t("faq_cta_title")}
             </h3>
             <p className="text-sm text-emerald-800">
-              आमच्याशी थेट व्हॉट्सॲपवर चॅट करा आणि तातडीने माहिती मिळवा.
+              {t("faq_cta_desc")}
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export default function FaqSection() {
             className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1faa4f] text-gray-950 font-bold px-5 py-3 rounded-xl shadow transition-all shrink-0 active:scale-95 text-sm"
           >
             <MessageCircle className="w-5 h-5 fill-current" />
-            <span>थेट विचारणा करा</span>
+            <span>{t("faq_cta_button")}</span>
           </a>
         </div>
 

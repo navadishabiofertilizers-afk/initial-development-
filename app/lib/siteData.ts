@@ -2,11 +2,14 @@ export const BUSINESS_INFO = {
   name: "Nava Disha Bio Fertilizers",
   owner: "Bhimashankar Biradar",
   address: {
-    city: "Jath",
-    district: "Sangli",
+    farm: "Biradar Farm",
+    village: "Muchandi",
+    taluka: "Taluka Jath",
+    district: "District Sangli",
     state: "Maharashtra",
     country: "India",
-    formatted: "Jath, Sangli District, Maharashtra, India"
+    city: "Jath",
+    formatted: "Biradar Farm, Muchandi, Taluka Jath, District Sangli, Maharashtra, India"
   },
   whatsapp: "+91 87676 53352",
   whatsappRaw: "918767653352",

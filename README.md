@@ -1,6 +1,6 @@
 # Nava Disha Bio Fertilizers (नवा दिशा बायो फर्टिलायझर्स)
 
-Production-ready, highly polished, mobile-first website for **Nava Disha Bio Fertilizers**, an authentic vermicompost and live earthworm initiative led by **Bhimashankar Biradar** in **Jath, Sangli, Maharashtra, India**.
+Production-ready, highly polished, mobile-first website for **Nava Disha Bio Fertilizers**, an authentic vermicompost and live earthworm initiative led by **Bhimashankar Biradar** in **Biradar Farm, Muchandi, Taluka Jath, District Sangli, Maharashtra, India**.
 
 ---
 
@@ -8,7 +8,7 @@ Production-ready, highly polished, mobile-first website for **Nava Disha Bio Fer
 
 - **Business Name**: Nava Disha Bio Fertilizers
 - **Proprietor / Owner**: Bhimashankar Biradar
-- **Location**: Jath, Sangli District, Maharashtra, India
+- **Location**: Biradar Farm, Muchandi, Taluka Jath, District Sangli, Maharashtra, India
 - **WhatsApp Business**: [+91 87676 53352](https://wa.me/918767653352)
 - **Email**: navadishabiofertilizers@gmail.com
 - **Instagram**: [nava_disha_foundation_muchandi](https://www.instagram.com/nava_disha_foundation_muchandi?cplk=ZmcxbHA1MDZreXdq)

@@ -18,7 +18,7 @@ export default function ProductCards() {
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 bg-emerald-100/80 border border-emerald-300 text-emerald-900 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-            <span>सेंद्रिय कृषी उत्पादने</span>
+            <span>{t("products_tag")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b4332] tracking-tight">
             {t("products_title")}
@@ -85,7 +85,7 @@ export default function ProductCards() {
                   <div className="pt-4 border-t border-stone-100 space-y-3">
                     {/* Price policy strictly without invented prices */}
                     <div className="flex items-center justify-between bg-stone-50 px-3.5 py-2 rounded-xl border border-stone-200">
-                      <span className="text-xs text-stone-500 font-medium">दर / Price:</span>
+                      <span className="text-xs text-stone-500 font-medium">{t("products_rate_label")}</span>
                       <span className="text-sm font-bold text-[#704829] tracking-tight">
                         {t("products_price_label")}
                       </span>
@@ -120,10 +120,10 @@ export default function ProductCards() {
           <ShieldAlert className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
           <div className="text-xs sm:text-sm space-y-1">
             <p className="font-semibold text-amber-950">
-              पारदर्शक खरेदी व थेट व्यवहार (Transparency Note)
+              {t("transparency_title")}
             </p>
             <p className="text-amber-800 leading-relaxed">
-              गांडूळ खत व जिवंत गांडूळांचे दर मागणीचे प्रमाण (किलो / टन), अंतर आणि वाहतूक प्रकारानुसार ठरतात. आम्ही कोणतेही खोटे किंवा अनिश्चित दर प्रसिद्ध करत नाही; वाजवी दरासाठी कृपया थेट व्हॉट्सॲपवर संपर्क साधा.
+              {t("transparency_text")}
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Camera, Maximize2, X, Info } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
-import { GALLERY_ITEMS } from "../lib/siteData";
+import { GALLERY_ITEMS, BUSINESS_INFO } from "../lib/siteData";
 import { TranslationDictionary } from "../lib/translations";
 
 export default function FarmGallery() {
@@ -19,7 +19,7 @@ export default function FarmGallery() {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 bg-[#2d6a4f]/10 border border-[#2d6a4f]/30 text-[#1b4332] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
             <Camera className="w-3.5 h-3.5 text-[#2d6a4f]" />
-            <span>प्रत्यक्ष फार्म युनिट</span>
+            <span>{t("gallery_tag")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b4332] tracking-tight">
             {t("gallery_title")}
@@ -76,7 +76,7 @@ export default function FarmGallery() {
                     </p>
                   </div>
                   <div className="mt-3 text-[11px] font-medium text-emerald-700 flex items-center gap-1">
-                    <span>तपशील पाहण्यासाठी क्लिक करा</span>
+                    <span>{t("gallery_click_detail")}</span>
                   </div>
                 </div>
               </div>
@@ -87,9 +87,7 @@ export default function FarmGallery() {
         {/* Gallery Guidance Notice */}
         <div className="mt-10 bg-emerald-50 border border-emerald-200 rounded-xl p-4 max-w-2xl mx-auto flex items-center gap-3 text-xs text-emerald-900">
           <Info className="w-4 h-4 text-emerald-700 shrink-0" />
-          <p>
-            मूळ फार्म छायाचित्रे (हातातील खत, हाताळणी, बेड्स व शेडनेट) जत फार्मवरून थेट घेतली आहेत. मूळ फाइल्स <code className="bg-emerald-100 px-1 py-0.5 rounded font-mono text-emerald-950">public/images/farm/</code> मध्ये समाविष्ट केल्यावर त्वरित दिसतील.
-          </p>
+          <p>{t("gallery_note")}</p>
         </div>
 
         {/* Lightbox Modal */}
@@ -131,13 +129,13 @@ export default function FarmGallery() {
                   {t(activeItem.descKey as keyof TranslationDictionary)}
                 </p>
                 <div className="mt-4 pt-3 border-t border-stone-800 text-xs text-stone-400 flex items-center justify-between">
-                  <span>Nava Disha Bio Fertilizers • Jath, Sangli</span>
+                  <span>Nava Disha Bio Fertilizers • {BUSINESS_INFO.address.formatted}</span>
                   <button
                     type="button"
                     onClick={() => setActiveItem(null)}
                     className="text-emerald-400 hover:underline"
                   >
-                    बंद करा (Close)
+                    {t("modal_close")}
                   </button>
                 </div>
               </div>

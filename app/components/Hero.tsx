@@ -46,13 +46,13 @@ export default function Hero() {
 
             {/* Verified Location & Owner Badge */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-sm text-emerald-200">
-              <div className="flex items-center gap-1.5 bg-emerald-900/60 border border-emerald-700/50 px-3 py-1.5 rounded-lg">
-                <MapPin className="w-4 h-4 text-emerald-400" />
-                <span>{BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.district}</span>
+              <div className="flex items-center gap-1.5 bg-emerald-900/60 border border-emerald-700/50 px-3 py-1.5 rounded-lg max-w-md text-left">
+                <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span className="text-xs sm:text-sm leading-tight">{t("hero_location_badge")}</span>
               </div>
               <div className="flex items-center gap-1.5 bg-emerald-900/60 border border-emerald-700/50 px-3 py-1.5 rounded-lg">
-                <Award className="w-4 h-4 text-amber-300" />
-                <span>संचालक: {BUSINESS_INFO.owner}</span>
+                <Award className="w-4 h-4 text-amber-300 shrink-0" />
+                <span>{t("proprietor_label")} {BUSINESS_INFO.owner}</span>
               </div>
             </div>
 
@@ -114,7 +114,7 @@ export default function Hero() {
                 <div className="relative h-72 sm:h-80 md:h-96 w-full rounded-2xl overflow-hidden shadow-inner border border-emerald-700/50">
                   <Image
                     src="/images/farm/compost-in-hands.svg"
-                    alt="हातात घेतलेले अस्सल गांडूळ खत - Nava Disha Bio Fertilizers"
+                    alt={t("gallery_hands_title") as string}
                     fill
                     priority
                     className="object-cover"
@@ -123,11 +123,11 @@ export default function Hero() {
                   {/* Floating Micro Badge */}
                   <div className="absolute top-3 left-3 bg-gray-950/80 backdrop-blur-md border border-emerald-500/40 px-3 py-1.5 rounded-xl text-xs font-semibold text-emerald-300 flex items-center gap-1.5 shadow-lg">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>अस्सल दर्जा नमुना</span>
+                    <span>{t("hero_sample_badge")}</span>
                   </div>
 
                   <div className="absolute bottom-3 right-3 bg-emerald-950/90 backdrop-blur-md border border-emerald-500/40 px-3 py-1.5 rounded-xl text-xs text-white flex items-center gap-1 shadow-lg">
-                    <span>जत, सांगली फार्म</span>
+                    <span>{t("hero_farm_badge")}</span>
                   </div>
                 </div>
 
@@ -139,12 +139,12 @@ export default function Hero() {
                         Nava Disha Bio Fertilizers
                       </p>
                       <p className="text-base font-bold text-white mt-0.5">
-                        शुद्ध गांडूळ खत व संवर्धन संच
+                        {t("hero_card_product")}
                       </p>
                     </div>
                     <div className="text-right">
                       <span className="inline-block bg-[#8c5e3c]/40 text-amber-200 border border-[#8c5e3c] px-2.5 py-1 rounded-lg text-xs font-semibold">
-                        Contact for price
+                        {t("products_price_label")}
                       </span>
                     </div>
                   </div>

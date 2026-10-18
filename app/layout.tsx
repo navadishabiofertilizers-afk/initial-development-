@@ -11,17 +11,18 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://navadishabiofertilizers.com"),
-  title: "Nava Disha Bio Fertilizers | गांडूळ खत व जिवंत गांडूळ | Jath, Sangli",
+  title: "Nava Disha Bio Fertilizers | गांडूळ खत व जिवंत गांडूळ | Muchandi, Jath, Sangli",
   description:
-    "Nava Disha Bio Fertilizers (संचालक: भीमाशंकर बिरादार), जत, सांगली. उत्तम प्रतीचे अस्सल गांडूळ खत (Vermicompost / Gandul Khat), जिवंत गांडूळ व स्टार्टर कल्चर थेट फार्मवरून उपलब्ध.",
+    "Nava Disha Bio Fertilizers (संचालक: भीमाशंकर बिरादार), बिरादार फार्म, मुचंडी, तालुका जत, जिल्हा सांगली, महाराष्ट्र, भारत. उत्तम प्रतीचे अस्सल गांडूळ खत (Vermicompost / Gandul Khat), जिवंत गांडूळ व स्टार्टर कल्चर थेट फार्मवरून उपलब्ध.",
   keywords: [
     "Nava Disha Bio Fertilizers",
+    "Biradar Farm Muchandi",
     "Gandul Khat Jath",
     "Vermicompost Sangli",
     "Live Earthworms Maharashtra",
     "गांडूळ खत जत",
     "गांडूळ खत सांगली",
-    "सेंद्रिय खत",
+    "सेंद्रिय खत मुचंडी",
     "Bhimashankar Biradar",
     "Earthworm starter culture",
     "Organic farming Maharashtra"
@@ -41,9 +42,9 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Nava Disha Bio Fertilizers | अस्सल गांडूळ खत व जिवंत गांडूळ | Jath",
+    title: "Nava Disha Bio Fertilizers | अस्सल गांडूळ खत व जिवंत गांडूळ | Biradar Farm, Muchandi",
     description:
-      "उच्च दर्जाचे अस्सल गांडूळ खत, जिवंत गांडूळ व स्टार्टर कल्चर. संचालक: भीमाशंकर बिरादार, जत, सांगली.",
+      "उच्च दर्जाचे अस्सल गांडूळ खत, जिवंत गांडूळ व स्टार्टर कल्चर. संचालक: भीमाशंकर बिरादार, बिरादार फार्म, मुचंडी, तालुका जत, जिल्हा सांगली, महाराष्ट्र, भारत.",
     url: "https://navadishabiofertilizers.com",
     siteName: "Nava Disha Bio Fertilizers",
     locale: "mr_IN",
@@ -69,7 +70,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: BUSINESS_INFO.name,
   description:
-    "Producer of authentic organic vermicompost, active live earthworms, and starter cultures for sustainable agriculture in Jath, Sangli.",
+    "Producer of authentic organic vermicompost, active live earthworms, and starter cultures for sustainable agriculture at Biradar Farm, Muchandi, Taluka Jath, District Sangli, Maharashtra, India.",
   founder: {
     "@type": "Person",
     name: BUSINESS_INFO.owner
@@ -78,9 +79,10 @@ const jsonLd = {
   email: BUSINESS_INFO.email,
   address: {
     "@type": "PostalAddress",
-    addressLocality: BUSINESS_INFO.address.city,
-    addressRegion: BUSINESS_INFO.address.state,
-    addressCountry: BUSINESS_INFO.address.country
+    streetAddress: "Biradar Farm, Muchandi",
+    addressLocality: "Taluka Jath",
+    addressRegion: "District Sangli, Maharashtra",
+    addressCountry: "India"
   },
   sameAs: [BUSINESS_INFO.socials.instagram],
   priceRange: "Contact for price",

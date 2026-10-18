@@ -44,7 +44,7 @@ export default function AboutSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 bg-stone-100 border border-stone-300 text-stone-800 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
             <UserCheck className="w-3.5 h-3.5 text-emerald-700" />
-            <span>विश्वासू कृषी पुढाकार</span>
+            <span>{t("about_tag")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b4332] tracking-tight">
             {t("about_title")}
@@ -63,7 +63,7 @@ export default function AboutSection() {
               <div className="relative h-80 sm:h-96 w-full rounded-2xl overflow-hidden">
                 <Image
                   src="/images/farm/shaded-farm-setup.svg"
-                  alt="Nava Disha Farm Setup in Jath"
+                  alt="Nava Disha Farm Setup - Biradar Farm, Muchandi"
                   fill
                   className="object-cover"
                 />
@@ -82,7 +82,7 @@ export default function AboutSection() {
                   </div>
                   <div className="text-right text-xs text-emerald-300">
                     <span className="block font-medium">Nava Disha Bio Fertilizers</span>
-                    <span className="text-emerald-400/80">जत, सांगली</span>
+                    <span className="text-emerald-400/80">मुचंडी, जत, सांगली</span>
                   </div>
                 </div>
               </div>
@@ -91,13 +91,13 @@ export default function AboutSection() {
 
           {/* Business Mission & Values */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-1.5 text-emerald-800 font-semibold text-sm bg-emerald-50 px-3 py-1 rounded-lg border border-emerald-200">
-              <MapPin className="w-4 h-4 text-emerald-700" />
-              <span>{BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.district}, {BUSINESS_INFO.address.state}</span>
+            <div className="inline-flex items-center gap-1.5 text-emerald-800 font-semibold text-xs sm:text-sm bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 max-w-full">
+              <MapPin className="w-4 h-4 text-emerald-700 shrink-0" />
+              <span>{t("about_location_label")}</span>
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-bold text-stone-900 leading-snug">
-              सेंद्रिय शेतीची नवी दिशा — शेतकऱ्यांचा विश्वास, जमिनीची सुदृढता
+              {t("about_headline")}
             </h3>
 
             <p className="text-stone-700 text-base leading-relaxed">
@@ -113,25 +113,25 @@ export default function AboutSection() {
               <div className="flex items-start gap-2.5 p-3 rounded-xl bg-stone-50 border border-stone-200">
                 <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm font-medium text-stone-800">
-                  कोणतीही रासायनिक भेसळ नाही
+                  {t("about_commitment_1")}
                 </span>
               </div>
               <div className="flex items-start gap-2.5 p-3 rounded-xl bg-stone-50 border border-stone-200">
                 <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm font-medium text-stone-800">
-                  थेट जत फार्ममधून खात्रीशीर वजन व प्रत
+                  {t("about_commitment_2")}
                 </span>
               </div>
               <div className="flex items-start gap-2.5 p-3 rounded-xl bg-stone-50 border border-stone-200">
                 <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm font-medium text-stone-800">
-                  बारीक चाळलेले व दुर्गंधीमुक्त खत
+                  {t("about_commitment_3")}
                 </span>
               </div>
               <div className="flex items-start gap-2.5 p-3 rounded-xl bg-stone-50 border border-stone-200">
                 <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm font-medium text-stone-800">
-                  स्थानिक शेतकरी व बागायतदारांसाठी सुलभ संपर्क
+                  {t("about_commitment_4")}
                 </span>
               </div>
             </div>
@@ -147,7 +147,7 @@ export default function AboutSection() {
               {t("about_process_title")}
             </h3>
             <p className="text-sm text-stone-600 mt-2">
-              नैसर्गिक व शास्त्रीय नियमांचे तंतोतंत पालन करून केलेली दर्जापूर्ण निर्मिती
+              {t("about_process_subtitle")}
             </p>
           </div>
 
@@ -179,7 +179,7 @@ export default function AboutSection() {
                   </div>
 
                   <div className="mt-4 pt-3 border-t border-stone-200/60 text-[11px] font-semibold text-emerald-700">
-                    पायरी {step.num}
+                    {t("about_step_prefix")} {step.num}
                   </div>
                 </div>
               );

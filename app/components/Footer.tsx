@@ -40,7 +40,7 @@ export default function Footer() {
                   Nava Disha
                 </span>
                 <span className="text-xs text-emerald-400 tracking-wider uppercase font-semibold">
-                  Bio Fertilizers • जत
+                  {t("nav_brand_sub")}
                 </span>
               </div>
             </div>
@@ -50,8 +50,8 @@ export default function Footer() {
             </p>
 
             <div className="pt-2 text-xs text-emerald-300/70 space-y-1">
-              <p>संचालक: <strong className="text-emerald-200">{BUSINESS_INFO.owner}</strong></p>
-              <p>स्थान: {BUSINESS_INFO.address.formatted}</p>
+              <p>{t("proprietor_label")} <strong className="text-emerald-200">{BUSINESS_INFO.owner}</strong></p>
+              <p>{t("location_label")} {BUSINESS_INFO.address.formatted}</p>
             </div>
           </div>
 
@@ -111,7 +111,7 @@ export default function Footer() {
 
               <div className="flex items-start gap-2 text-emerald-200">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>{BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.district}, {BUSINESS_INFO.address.state}</span>
+                <span className="text-xs leading-relaxed">{BUSINESS_INFO.address.formatted}</span>
               </div>
 
               <a
@@ -155,7 +155,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/60 text-center sm:text-left">
           <p>{t("footer_legal")}</p>
           <p className="flex items-center gap-1.5">
-            <span>सेंद्रिय शेती • जत, सांगली, महाराष्ट्र</span>
+            <span>{t("footer_bottom_note")}</span>
           </p>
         </div>
       </div>
