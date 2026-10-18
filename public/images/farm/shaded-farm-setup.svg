@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shadeNetGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14361b" />
+      <stop offset="100%" stop-color="#2d6a4f" />
+    </linearGradient>
+    <pattern id="netMesh" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 0 10 L 20 10 M 10 0 L 10 20" stroke="#52b788" stroke-width="1" opacity="0.25" />
+    </pattern>
+  </defs>
+
+  <rect width="800" height="600" fill="#0f1a0e" />
+
+  <!-- Green Shade Net Roof -->
+  <polygon points="40,140 760,140 700,240 100,240" fill="url(#shadeNetGrad)" opacity="0.8" />
+  <polygon points="40,140 760,140 700,240 100,240" fill="url(#netMesh)" />
+
+  <!-- Supporting Truss Framework -->
+  <line x1="100" y1="240" x2="100" y2="520" stroke="#707070" stroke-width="7" />
+  <line x1="300" y1="220" x2="300" y2="520" stroke="#808080" stroke-width="6" />
+  <line x1="500" y1="220" x2="500" y2="520" stroke="#808080" stroke-width="6" />
+  <line x1="700" y1="240" x2="700" y2="520" stroke="#707070" stroke-width="7" />
+
+  <!-- Cross Bracing -->
+  <line x1="100" y1="260" x2="300" y2="340" stroke="#a0a0a0" stroke-width="2" opacity="0.5" />
+  <line x1="300" y1="260" x2="100" y2="340" stroke="#a0a0a0" stroke-width="2" opacity="0.5" />
+  <line x1="500" y1="260" x2="700" y2="340" stroke="#a0a0a0" stroke-width="2" opacity="0.5" />
+  <line x1="700" y1="260" x2="500" y2="340" stroke="#a0a0a0" stroke-width="2" opacity="0.5" />
+
+  <!-- Shaded Beds Beneath -->
+  <rect x="130" y="380" width="140" height="120" rx="6" fill="#3a2312" />
+  <rect x="330" y="380" width="140" height="120" rx="6" fill="#3a2312" />
+  <rect x="530" y="380" width="140" height="120" rx="6" fill="#3a2312" />
+
+  <!-- Gunny Bag / Coconut Fronds Covering on Beds -->
+  <path d="M 130 380 Q 200 365 270 380 L 270 410 Q 200 395 130 410 Z" fill="#8c5e3c" />
+  <path d="M 330 380 Q 400 365 470 380 L 470 410 Q 400 395 330 410 Z" fill="#8c5e3c" />
+  <path d="M 530 380 Q 600 365 670 380 L 670 410 Q 600 395 530 410 Z" fill="#8c5e3c" />
+
+  <!-- Ambient Light Filtering Through Shade -->
+  <polygon points="120,240 180,500 240,500 160,240" fill="#74c69d" opacity="0.08" />
+  <polygon points="320,240 380,500 440,500 360,240" fill="#74c69d" opacity="0.08" />
+  <polygon points="520,240 580,500 640,500 560,240" fill="#74c69d" opacity="0.08" />
+
+  <!-- Info Overlay -->
+  <rect x="50" y="490" width="700" height="75" rx="14" fill="#0f1c0ecc" stroke="#52b78844" stroke-width="1.5" />
+  <circle cx="85" cy="527" r="18" fill="#2d6a4f" />
+  <path d="M 78 528 L 83 533 L 93 521" stroke="#d8f3dc" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <text x="120" y="520" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="700" fill="#ffffff">
+    शेडनेट अंतर्गत फार्म युनिट (Shaded Farm Setup)
+  </text>
+  <text x="120" y="545" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#a3b899">
+    Nava Disha Bio Fertilizers • तापमान व आर्द्रता नियंत्रित नैसर्गिक वातावरण • Jath Farm
+  </text>
+</svg>

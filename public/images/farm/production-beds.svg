@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b4332" />
+      <stop offset="50%" stop-color="#2d6a4f" />
+      <stop offset="100%" stop-color="#40916c" />
+    </linearGradient>
+    <linearGradient id="bedGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2b1a10" />
+      <stop offset="50%" stop-color="#4a3020" />
+      <stop offset="100%" stop-color="#23140b" />
+    </linearGradient>
+    <linearGradient id="bedGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#362115" />
+      <stop offset="50%" stop-color="#553926" />
+      <stop offset="100%" stop-color="#2a170d" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="#142416" />
+
+  <!-- Farm background and trees -->
+  <rect x="0" y="0" width="800" height="260" fill="url(#skyGrad)" opacity="0.6" />
+  <circle cx="100" cy="180" r="70" fill="#1b4332" opacity="0.8" />
+  <circle cx="200" cy="170" r="85" fill="#2d6a4f" opacity="0.7" />
+  <circle cx="340" cy="190" r="60" fill="#1b4332" opacity="0.8" />
+  <circle cx="680" cy="180" r="90" fill="#1b4332" opacity="0.8" />
+  <circle cx="560" cy="170" r="75" fill="#2d6a4f" opacity="0.7" />
+
+  <!-- Bed 1 (Left perspective) -->
+  <polygon points="60,340 240,250 310,250 180,500 50,500" fill="url(#bedGrad1)" />
+  <ellipse cx="140" cy="380" rx="45" ry="12" fill="#52b788" opacity="0.2" />
+
+  <!-- Bed 2 (Center perspective) -->
+  <polygon points="260,510 350,250 450,250 540,510" fill="url(#bedGrad2)" />
+  <!-- Straw / mulch cover lines on bed 2 -->
+  <path d="M 320 450 L 480 450 M 340 400 L 460 400 M 360 350 L 440 350 M 375 300 L 425 300" stroke="#d4a373" stroke-width="4" stroke-dasharray="8 6" opacity="0.65" />
+
+  <!-- Bed 3 (Right perspective) -->
+  <polygon points="620,500 490,250 560,250 740,340 750,500" fill="url(#bedGrad1)" />
+
+  <!-- Walkways between beds -->
+  <polygon points="180,500 310,250 350,250 260,510" fill="#192816" />
+  <polygon points="540,510 450,250 490,250 620,500" fill="#192816" />
+
+  <!-- Irrigation Micro-Sprinkler Pipes overhead / along beds -->
+  <line x1="200" y1="230" x2="600" y2="230" stroke="#74c69d" stroke-width="2" opacity="0.8" />
+  <line x1="300" y1="230" x2="300" y2="250" stroke="#74c69d" stroke-width="2" />
+  <line x1="400" y1="230" x2="400" y2="250" stroke="#74c69d" stroke-width="2" />
+  <line x1="500" y1="230" x2="500" y2="250" stroke="#74c69d" stroke-width="2" />
+  <!-- Water droplets mist effect -->
+  <circle cx="300" cy="260" r="1.5" fill="#a7c957" opacity="0.6" />
+  <circle cx="400" cy="265" r="1.5" fill="#a7c957" opacity="0.6" />
+  <circle cx="500" cy="260" r="1.5" fill="#a7c957" opacity="0.6" />
+
+  <!-- Overlay badge -->
+  <rect x="50" y="490" width="700" height="75" rx="14" fill="#0f1c0ecc" stroke="#52b78844" stroke-width="1.5" />
+  <circle cx="85" cy="527" r="18" fill="#52b788" />
+  <path d="M 78 528 L 83 533 L 93 521" stroke="#0f1c0e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <text x="120" y="520" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="700" fill="#ffffff">
+    गांडूळ खत उत्पादन बेड (Vermicompost Production Beds)
+  </text>
+  <text x="120" y="545" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#a3b899">
+    Nava Disha Bio Fertilizers • शास्त्रीय पद्धतीने तयार केलेले उत्पादन बेड • Jath
+  </text>
+</svg>
