@@ -9,9 +9,9 @@ Production-ready, highly polished, mobile-first website for **Nava Disha Bio Fer
 - **Business Name**: Nava Disha Bio Fertilizers
 - **Proprietor / Owner**: Bhimashankar Biradar
 - **Location**: Biradar Farm, Muchandi, Taluka Jath, District Sangli, Maharashtra, India
-- **WhatsApp Business**: [+91 87676 53352](https://wa.me/918767653352)
+- **WhatsApp Business**: [+91 9096948271](https://wa.me/919096948271)
 - **Email**: navadishabiofertilizers@gmail.com
-- **Instagram**: [nava_disha_foundation_muchandi](https://www.instagram.com/nava_disha_foundation_muchandi?cplk=ZmcxbHA1MDZreXdq)
+- **Instagram**: [nava_disha_biofertilizers](https://www.instagram.com/nava_disha_biofertilizers/)
 - **Languages**: Marathi (Default), Hindi, English
 - **Delivery Policy**: Local farm dispatch and courier/transport (subject to confirmation and location)
 - **Pricing Policy**: "Contact for price" (transparency policy — prices customized by volume and transport)
