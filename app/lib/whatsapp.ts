@@ -1,4 +1,4 @@
-export const WHATSAPP_PHONE_NUMBER = "918767653352";
+export const WHATSAPP_PHONE_NUMBER = "919096948271";
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_PHONE_NUMBER}`;
 
 export const PRODUCT_WHATSAPP_MESSAGES = {
@@ -11,7 +11,11 @@ export const PRODUCT_WHATSAPP_MESSAGES = {
   bulkOrders:
     "Hello Nava Disha Bio Fertilizers, I would like to enquire about a bulk agricultural order. Please share quantity-based pricing and transport details.",
   general:
-    "Hello Nava Disha Bio Fertilizers, I would like to enquire about your organic products, availability and delivery to my location."
+    "Hello Nava Disha Bio Fertilizers, I would like to enquire about your organic products, availability and delivery to my location.",
+  bhoomiSamrata:
+    "Hello Nava Disha Bio Fertilizers, I am interested in Bhoomi Samrata Vermicompost. Please share the price, availability and delivery options.",
+  bhoomiSamrataPremium:
+    "Hello Nava Disha Bio Fertilizers, I am interested in Bhoomi Samrata Premium Vermicompost. Please share the price, availability and delivery options."
 } as const;
 
 export type ProductMessageKey = keyof typeof PRODUCT_WHATSAPP_MESSAGES;

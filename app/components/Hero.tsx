@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { MessageCircle, Sprout, ShieldCheck, Truck, ArrowRight, MapPin, Award } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { buildWhatsAppUrl, PRODUCT_WHATSAPP_MESSAGES } from "../lib/whatsapp";
@@ -45,7 +46,7 @@ export default function Hero() {
             </p>
 
             {/* Verified Location & Owner Badge */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-sm text-emerald-200">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 text-sm text-emerald-200">
               <div className="flex items-center gap-1.5 bg-emerald-900/60 border border-emerald-700/50 px-3 py-1.5 rounded-lg max-w-md text-left">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span className="text-xs sm:text-sm leading-tight">{t("hero_location_badge")}</span>
@@ -68,13 +69,13 @@ export default function Hero() {
                 <span>{t("hero_cta_whatsapp")}</span>
               </a>
 
-              <a
-                href="#products"
+              <Link
+                href="/#products"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-900/80 hover:bg-emerald-800 text-white font-semibold text-base px-6 py-4 rounded-2xl border border-emerald-600/40 transition-all hover:border-emerald-500"
               >
                 <span>{t("hero_cta_explore")}</span>
                 <ArrowRight className="w-4 h-4 text-emerald-300" />
-              </a>
+              </Link>
             </div>
 
             {/* Value Proposition Badges */}
@@ -103,7 +104,7 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Visual Showcase Card */}
+          {/* Right Column: Visual Showcase Card with Real Photography */}
           <div className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
@@ -113,15 +114,15 @@ export default function Hero() {
                 {/* Hero Showcase Image */}
                 <div className="relative h-72 sm:h-80 md:h-96 w-full rounded-2xl overflow-hidden shadow-inner border border-emerald-700/50">
                   <Image
-                    src="/images/farm/compost-in-hands.svg"
-                    alt={t("gallery_hands_title") as string}
+                    src="/images/photos/farmer-field.jpg"
+                    alt="Bhimashankar Biradar at Biradar Farm, Muchandi"
                     fill
                     priority
                     className="object-cover"
                   />
                   
                   {/* Floating Micro Badge */}
-                  <div className="absolute top-3 left-3 bg-gray-950/80 backdrop-blur-md border border-emerald-500/40 px-3 py-1.5 rounded-xl text-xs font-semibold text-emerald-300 flex items-center gap-1.5 shadow-lg">
+                  <div className="absolute top-3 left-3 bg-gray-950/85 backdrop-blur-md border border-emerald-500/40 px-3 py-1.5 rounded-xl text-xs font-semibold text-emerald-300 flex items-center gap-1.5 shadow-lg">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                     <span>{t("hero_sample_badge")}</span>
                   </div>

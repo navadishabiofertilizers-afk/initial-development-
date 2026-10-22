@@ -124,7 +124,7 @@ export default function ContactSection() {
                 {t("contact_instagram_label")}
               </span>
               <p className="text-sm font-bold text-stone-900 mt-1">
-                @nava_disha_foundation_muchandi
+                @nava_disha_biofertilizers
               </p>
               <p className="text-xs text-stone-500 mt-2">
                 {t("contact_instagram_desc")}

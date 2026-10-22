@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, Mail, MapPin } from "lucide-react";
 import { InstagramIcon } from "./Icons";
@@ -8,6 +9,8 @@ import { useLanguage } from "./LanguageContext";
 import { BUSINESS_INFO } from "../lib/siteData";
 import { Language } from "../lib/translations";
 import { buildWhatsAppUrl, PRODUCT_WHATSAPP_MESSAGES } from "../lib/whatsapp";
+
+const COPYRIGHT_YEAR = 2026;
 
 export default function Footer() {
   const { language, setLanguage, t } = useLanguage();
@@ -55,32 +58,55 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Distinct Products Links */}
           <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white border-l-2 border-emerald-400 pl-2">
+              {t("nav_products")}
+            </h4>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link href="/bhoomi-samrata" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-emerald-400">🌿</span>
+                  <span>{t("nav_prod_bs")}</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/bhoomi-samrata-premium" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-amber-300">⭐</span>
+                  <span>{t("nav_prod_bsp")}</span>
+                </Link>
+              </li>
+              <li className="pt-2">
+                <Link href="/#products" className="text-xs text-emerald-300/70 hover:text-white transition-colors">
+                  {t("hero_cta_explore")} →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div className="lg:col-span-2 space-y-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white border-l-2 border-emerald-400 pl-2">
               {t("footer_quick_links")}
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#home" className="hover:text-white transition-colors">{t("nav_home")}</a>
+                <Link href="/#home" className="hover:text-white transition-colors">{t("nav_home")}</Link>
               </li>
               <li>
-                <a href="#products" className="hover:text-white transition-colors">{t("nav_products")}</a>
+                <Link href="/#gallery" className="hover:text-white transition-colors">{t("nav_gallery")}</Link>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-white transition-colors">{t("nav_gallery")}</a>
+                <Link href="/#about" className="hover:text-white transition-colors">{t("nav_about")}</Link>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors">{t("nav_about")}</a>
+                <Link href="/#benefits" className="hover:text-white transition-colors">{t("nav_benefits")}</Link>
               </li>
               <li>
-                <a href="#benefits" className="hover:text-white transition-colors">{t("nav_benefits")}</a>
+                <Link href="/#faq" className="hover:text-white transition-colors">{t("nav_faq")}</Link>
               </li>
               <li>
-                <a href="#faq" className="hover:text-white transition-colors">{t("nav_faq")}</a>
-              </li>
-              <li>
-                <a href="#enquire" className="hover:text-white transition-colors">{t("nav_enquire_now")}</a>
+                <Link href="/#enquire" className="hover:text-white transition-colors">{t("nav_enquire_now")}</Link>
               </li>
             </ul>
           </div>
@@ -103,59 +129,62 @@ export default function Footer() {
 
               <a
                 href={`mailto:${BUSINESS_INFO.email}`}
-                className="flex items-center gap-2 hover:text-white text-emerald-200 break-all"
-              >
-                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>{BUSINESS_INFO.email}</span>
-              </a>
-
-              <div className="flex items-start gap-2 text-emerald-200">
-                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="text-xs leading-relaxed">{BUSINESS_INFO.address.formatted}</span>
-              </div>
-
-              <a
-                href={BUSINESS_INFO.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-white text-emerald-200"
               >
-                <InstagramIcon className="w-4 h-4 text-rose-400 shrink-0" />
-                <span>Instagram Profile</span>
+                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span className="truncate">{BUSINESS_INFO.email}</span>
               </a>
-            </div>
-          </div>
 
-          {/* Language Switcher in Footer */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white border-l-2 border-emerald-400 pl-2">
-              {t("lang_select_label")}
-            </h4>
-            <div className="flex flex-col gap-2">
-              {languages.map((item) => (
-                <button
-                  key={item.code}
-                  type="button"
-                  onClick={() => setLanguage(item.code)}
-                  className={`px-3 py-2 text-xs font-semibold rounded-xl text-left transition-all ${
-                    language === item.code
-                      ? "bg-emerald-600 text-white font-bold"
-                      : "bg-[#163829] text-emerald-300 hover:bg-[#1a4432] hover:text-white"
-                  }`}
-                >
-                  {item.label} {language === item.code ? "✓" : ""}
-                </button>
-              ))}
+              <div className="flex items-start gap-2 text-emerald-200/90 text-xs leading-relaxed">
+                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>{BUSINESS_INFO.address.formatted}</span>
+              </div>
+
+              {BUSINESS_INFO.socials.instagram && (
+                <div className="pt-2">
+                  <a
+                    href={BUSINESS_INFO.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-pink-300 hover:text-pink-200"
+                  >
+                    <InstagramIcon className="w-4 h-4 text-pink-400" />
+                    <span>Instagram Profile</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Copyright & Disclaimer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/60 text-center sm:text-left">
-          <p>{t("footer_legal")}</p>
-          <p className="flex items-center gap-1.5">
-            <span>{t("footer_bottom_note")}</span>
+        {/* Bottom Bar: Language Switcher & Legal */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/60">
+          <p>© {COPYRIGHT_YEAR} {BUSINESS_INFO.name}. All rights reserved.</p>
+
+          {/* Duplicate Language Toggle in Footer */}
+          <div className="flex items-center gap-2">
+            <span className="text-emerald-400/80">{t("lang_select_label")}:</span>
+            <div className="flex bg-[#0d2118] p-1 rounded-lg border border-emerald-800">
+              {languages.map((item) => (
+                <button
+                  key={item.code}
+                  type="button"
+                  onClick={() => setLanguage(item.code)}
+                  className={`px-2 py-0.5 rounded text-[11px] font-medium transition-colors ${
+                    language === item.code
+                      ? "bg-emerald-700 text-white font-bold"
+                      : "text-emerald-300 hover:text-white"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <p className="text-[11px] text-emerald-400/50 text-center sm:text-right">
+            {t("footer_bottom_note")}
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { LanguageProvider } from "./components/LanguageContext";
 import { BUSINESS_INFO } from "./lib/siteData";
+import OnlineOrderingAnnouncement from "./components/OnlineOrderingAnnouncement";
 
 export const viewport: Viewport = {
   themeColor: "#1b4332",
@@ -110,6 +111,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-[#faf9f6] text-stone-900 selection:bg-emerald-200 selection:text-emerald-950">
         <LanguageProvider>
           {children}
+          <OnlineOrderingAnnouncement />
         </LanguageProvider>
       </body>
     </html>

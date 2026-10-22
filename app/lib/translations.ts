@@ -41,6 +41,43 @@ export interface TranslationDictionary {
   transparency_title: string;
   transparency_text: string;
 
+  // Online Ordering Announcement
+  announcement_text: string;
+  announcement_close: string;
+  announcement_cta: string;
+  announcement_label: string;
+
+  // The Two Main Products
+  prod_bs_name: string;
+  prod_bs_desc: string;
+  prod_bs_features: string[];
+  prod_bs_badge: string;
+
+  prod_bsp_name: string;
+  prod_bsp_desc: string;
+  prod_bsp_features: string[];
+  prod_bsp_badge: string;
+
+  // Product Page & Actions
+  prod_view_details: string;
+  prod_app_guidance_title: string;
+  prod_app_guidance_contact: string;
+  prod_specs_title: string;
+  prod_pack_title: string;
+  prod_pack_contact: string;
+  nav_prod_bs: string;
+  nav_prod_bsp: string;
+  back_to_home: string;
+  other_product_cta: string;
+  breadcrumb_home: string;
+  breadcrumb_products: string;
+  prod_contact_us_for_details: string;
+  form_opt_bs: string;
+  form_opt_bsp: string;
+  other_offerings_title: string;
+  other_offerings_desc: string;
+  prod_premium_image_note: string;
+
   // Product 1: Live earthworms
   prod_worms_name: string;
   prod_worms_desc: string;
@@ -249,6 +286,54 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     transparency_text:
       "गांडूळ खत व जिवंत गांडूळांचे दर मागणीचे प्रमाण (किलो / टन), अंतर आणि वाहतूक प्रकारानुसार ठरतात. आम्ही कोणतेही खोटे किंवा अनिश्चित दर प्रसिद्ध करत नाही; वाजवी दरासाठी कृपया थेट व्हॉट्सॲपवर संपर्क साधा.",
 
+    // Online Ordering Announcement
+    announcement_text: "ऑनलाइन ऑर्डरची सुविधा लवकरच सुरू होत आहे. चौकशी किंवा ऑर्डरसाठी आमच्याशी थेट संपर्क साधा.",
+    announcement_close: "बंद करा",
+    announcement_cta: "चौकशी करा",
+    announcement_label: "सूचना",
+
+    // The Two Main Products
+    prod_bs_name: "भूमी सम्राट गांडूळ खत (Bhoomi Samrata Vermicompost)",
+    prod_bs_desc:
+      "बिरादार फार्म, मुचंडी येथील भूमी सम्राट गांडूळ खत. उत्पादनाची उपलब्धता, वैशिष्ट्ये व वापरासाठी थेट संपर्क साधा.",
+    prod_bs_features: [
+      "बिरादार फार्म, मुचंडी येथे तयार केलेले गांडूळ खत",
+      "उपलब्धता व उत्पादन तपशीलासाठी थेट चौकशी करा",
+      "पिकानुसार वापर मार्गदर्शनासाठी संपर्क साधा"
+    ],
+    prod_bs_badge: "भूमी सम्राट गांडूळ खत",
+
+    prod_bsp_name: "भूमी सम्राट प्रीमियम गांडूळ खत (Bhoomi Samrata Premium Vermicompost)",
+    prod_bsp_desc:
+      "नवा दिशा बायो फर्टिलायझर्सचे प्रीमियम गांडूळ खत. वैशिष्ट्ये, उपलब्धता व योग्य वापर जाणून घेण्यासाठी थेट संपर्क साधा.",
+    prod_bsp_features: [
+      "भूमी सम्राट गांडूळ खताची प्रीमियम श्रेणी",
+      "उत्पादन वैशिष्ट्ये व उपलब्धतेसाठी थेट चौकशी करा",
+      "पिकानुसार वापर मार्गदर्शनासाठी संपर्क साधा"
+    ],
+    prod_bsp_badge: "प्रीमियम श्रेणी",
+
+    prod_view_details: "उत्पादन तपशील पहा",
+    prod_app_guidance_title: "वापर पद्धती व पीक मार्गदर्शन",
+    prod_app_guidance_contact:
+      "पिकाचा प्रकार, जमिनीचे क्षेत्र आणि झाडांच्या वयानुसार योग्य डोस व मार्गदर्शनासाठी कृपया थेट आमच्याशी संपर्क साधा.",
+    prod_specs_title: "उत्पादन वैशिष्ट्ये व गुणवत्ता",
+    prod_pack_title: "उपलब्ध पॅकिंग व पुरवठा",
+    prod_pack_contact:
+      "पॅकिंग, पुरवठा व उत्पादन तपशीलांची पुष्टी करण्यासाठी कृपया थेट संपर्क साधा.",
+    nav_prod_bs: "भूमी सम्राट खत",
+    nav_prod_bsp: "भूमी सम्राट प्रीमियम",
+    back_to_home: "मुख्यपृष्ठावर परत जा",
+    other_product_cta: "दुसरे उत्पादन पहा",
+    breadcrumb_home: "मुख्यपृष्ठ",
+    breadcrumb_products: "उत्पादने",
+    prod_contact_us_for_details: "तपशील व मार्गदर्शनासाठी थेट संपर्क करा",
+    form_opt_bs: "भूमी सम्राट गांडूळ खत (Bhoomi Samrata)",
+    form_opt_bsp: "भूमी सम्राट प्रीमियम गांडूळ खत (Premium)",
+    other_offerings_title: "इतर फार्म उत्पादने",
+    other_offerings_desc: "जिवंत गांडूळ, स्टार्टर कल्चर व इतर पुरवठ्यासाठी थेट चौकशी करा.",
+    prod_premium_image_note: "फार्ममधील उत्पादन बेडचे छायाचित्र; प्रीमियम उत्पादनाचे पॅकेज येथे दाखवलेले नाही.",
+
     prod_worms_name: "जिवंत गांडूळ (Live Earthworms)",
     prod_worms_desc:
       "गांडूळ खत निर्मिती युनिट व बागेच्या मातीतील सेंद्रिय कर्ब सुधारण्यासाठी निरोगी व सक्रिय जिवंत गांडूळ.",
@@ -371,7 +456,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       "होय, नवीन प्रकल्प सुरू करण्यासाठी आम्ही आवश्यक ते स्टार्टर कल्चर (गांडूळ + कोकून्स) आणि प्राथमिक तांत्रिक मार्गदर्शन देतो.",
     faq5_q: "ऑर्डर देण्यासाठी काय करावे लागेल?",
     faq5_a:
-      "खाली दिलेल्या फॉर्ममध्ये तुमची माहिती भरा किंवा थेट आमच्या व्हॉट्सॲप क्रमांकावर (+91 87676 53352) मेसेज पाठवून ऑर्डर नोंदवा.",
+      "खाली दिलेल्या फॉर्ममध्ये तुमची माहिती भरा किंवा थेट आमच्या व्हॉट्सॲप क्रमांकावर (+91 9096948271) मेसेज पाठवून ऑर्डर नोंदवा.",
 
     form_tag: "थेट व्हॉट्सॲप चौकशी",
     form_title: "थेट व्हॉट्सॲप चौकशी फॉर्म",
@@ -476,6 +561,54 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     transparency_title: "पारदर्शी खरीद व सीधा व्यवहार",
     transparency_text:
       "वर्मीकम्पोस्ट और केंचुओं के दाम मात्रा (किलो/टन), दूरी और परिवहन साधन के अनुसार तय होते हैं। हम कोई काल्पनिक दर नहीं बताते; सही मूल्य के लिए कृपया सीधे व्हाट्सएप पर संपर्क करें।",
+
+    // Online Ordering Announcement
+    announcement_text: "ऑनलाइन ऑर्डर की सुविधा जल्द शुरू होगी। पूछताछ या ऑर्डर के लिए सीधे हमसे संपर्क करें।",
+    announcement_close: "बंद करें",
+    announcement_cta: "पूछताछ करें",
+    announcement_label: "सूचना",
+
+    // The Two Main Products
+    prod_bs_name: "भूमि सम्राट वर्मीकम्पोस्ट (Bhoomi Samrata Vermicompost)",
+    prod_bs_desc:
+      "बिरादार फार्म, मुचंडी की भूमि सम्राट वर्मीकम्पोस्ट। उपलब्धता, उत्पाद की विशेषताओं और उपयोग के लिए सीधे संपर्क करें।",
+    prod_bs_features: [
+      "बिरादार फार्म, मुचंडी में तैयार वर्मीकम्पोस्ट",
+      "उपलब्धता और उत्पाद विवरण के लिए सीधे पूछें",
+      "फसल के अनुसार उपयोग की सलाह के लिए संपर्क करें"
+    ],
+    prod_bs_badge: "भूमि सम्राट वर्मीकम्पोस्ट",
+
+    prod_bsp_name: "भूमि सम्राट प्रीमियम वर्मीकम्पोस्ट (Bhoomi Samrata Premium Vermicompost)",
+    prod_bsp_desc:
+      "नवा दिशा बायो फर्टिलाइजर्स की प्रीमियम वर्मीकम्पोस्ट। विशेषताओं, उपलब्धता और उपयुक्त उपयोग की जानकारी के लिए सीधे संपर्क करें।",
+    prod_bsp_features: [
+      "भूमि सम्राट वर्मीकम्पोस्ट की प्रीमियम श्रेणी",
+      "उत्पाद विवरण और उपलब्धता के लिए सीधे पूछें",
+      "फसल के अनुसार उपयोग की सलाह के लिए संपर्क करें"
+    ],
+    prod_bsp_badge: "प्रीमियम श्रेणी",
+
+    prod_view_details: "उत्पाद विवरण देखें",
+    prod_app_guidance_title: "उपयोग विधि और फसल मार्गदर्शन",
+    prod_app_guidance_contact:
+      "फसल के प्रकार, क्षेत्र और पौधे की उम्र के अनुसार सही खुराक और मार्गदर्शन के लिए सीधे हमसे संपर्क करें।",
+    prod_specs_title: "उत्पाद विशेषताएं और गुणवत्ता",
+    prod_pack_title: "उपलब्ध पैकिंग और आपूर्ति",
+    prod_pack_contact:
+      "पैकिंग, आपूर्ति और उत्पाद विवरण की पुष्टि के लिए कृपया सीधे संपर्क करें।",
+    nav_prod_bs: "भूमि सम्राट खाद",
+    nav_prod_bsp: "भूमि सम्राट प्रीमियम",
+    back_to_home: "मुख्य पृष्ठ पर वापस जाएं",
+    other_product_cta: "दूसरा उत्पाद देखें",
+    breadcrumb_home: "होम",
+    breadcrumb_products: "उत्पाद",
+    prod_contact_us_for_details: "विवरण और मार्गदर्शन के लिए सीधे संपर्क करें",
+    form_opt_bs: "भूमि सम्राट वर्मीकम्पोस्ट (Bhoomi Samrata)",
+    form_opt_bsp: "भूमि सम्राट प्रीमियम वर्मीकम्पोस्ट (Premium)",
+    other_offerings_title: "फार्म के अन्य उत्पाद",
+    other_offerings_desc: "जीवित केंचुए, स्टार्टर कल्चर और अन्य आपूर्ति के लिए सीधे पूछें।",
+    prod_premium_image_note: "फार्म के उत्पादन बेड की तस्वीर; इसमें प्रीमियम उत्पाद की पैकेजिंग नहीं दिखाई गई है।",
 
     prod_worms_name: "जीवित केंचुआ (Live Earthworms)",
     prod_worms_desc:
@@ -599,7 +732,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       "हाँ, नई खाद यूनिट स्थापित करने के लिए स्टार्टर कल्चर (केंचुआ + कोकून) और बुनियादी मार्गदर्शन उपलब्ध है।",
     faq5_q: "ऑर्डर कैसे करें?",
     faq5_a:
-      "नीचे दिए गए फॉर्म को भरें या हमारे व्हाट्सएप नंबर (+91 87676 53352) पर सीधे संपर्क करें।",
+      "नीचे दिए गए फॉर्म को भरें या हमारे व्हाट्सएप नंबर (+91 9096948271) पर सीधे संपर्क करें।",
 
     form_tag: "सीधी व्हाट्सएप पूछताछ",
     form_title: "सीधा व्हाट्सएप पूछताछ फॉर्म",
@@ -704,6 +837,54 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     transparency_title: "Transparent Direct Farm Pricing",
     transparency_text:
       "Prices for vermicompost and live earthworms are determined by volume (kg/ton), destination distance, and transport mode. We do not publish speculative prices; please contact us directly on WhatsApp for an accurate quote.",
+
+    // Online Ordering Announcement
+    announcement_text: "Online Ordering Coming Soon! Contact us directly to enquire or place an order.",
+    announcement_close: "Dismiss",
+    announcement_cta: "Enquire Now",
+    announcement_label: "Notice",
+
+    // The Two Main Products
+    prod_bs_name: "Bhoomi Samrata Vermicompost",
+    prod_bs_desc:
+      "Bhoomi Samrata Vermicompost from Biradar Farm, Muchandi. Contact us directly for availability, product details, and usage guidance.",
+    prod_bs_features: [
+      "Vermicompost produced at Biradar Farm, Muchandi",
+      "Contact us for current availability and product details",
+      "Ask us for crop-specific usage guidance"
+    ],
+    prod_bs_badge: "Bhoomi Samrata Vermicompost",
+
+    prod_bsp_name: "Bhoomi Samrata Premium Vermicompost",
+    prod_bsp_desc:
+      "The premium vermicompost from Nava Disha Bio Fertilizers. Contact us directly for product characteristics, availability, and suitable use.",
+    prod_bsp_features: [
+      "The premium grade of Bhoomi Samrata Vermicompost",
+      "Contact us for current availability and product details",
+      "Ask us for crop-specific usage guidance"
+    ],
+    prod_bsp_badge: "Premium Grade",
+
+    prod_view_details: "View Product",
+    prod_app_guidance_title: "Application & Crop Guidance",
+    prod_app_guidance_contact:
+      "Contact us directly for crop-specific dosage rates, soil condition advice, and recommended application schedules.",
+    prod_specs_title: "Product Specifications & Quality",
+    prod_pack_title: "Packaging & Availability",
+    prod_pack_contact:
+      "Please contact us to confirm packaging, supply, and product details.",
+    nav_prod_bs: "Bhoomi Samrata",
+    nav_prod_bsp: "Bhoomi Samrata Premium",
+    back_to_home: "Back to Homepage",
+    other_product_cta: "View Other Product",
+    breadcrumb_home: "Home",
+    breadcrumb_products: "Products",
+    prod_contact_us_for_details: "Contact us directly for details and guidance",
+    form_opt_bs: "Bhoomi Samrata Vermicompost",
+    form_opt_bsp: "Bhoomi Samrata Premium Vermicompost",
+    other_offerings_title: "Other Farm Offerings",
+    other_offerings_desc: "Contact us directly about live earthworms, starter culture, and other supplies.",
+    prod_premium_image_note: "Farm production beds; premium product packaging is not shown.",
 
     prod_worms_name: "Live Earthworms (Gandul)",
     prod_worms_desc:
@@ -827,7 +1008,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       "Yes, we provide live earthworm starter cultures with cocoons and starter bedding, along with basic operational guidance.",
     faq5_q: "How can I place an order?",
     faq5_a:
-      "Complete the enquiry form below or message us directly on WhatsApp at +91 87676 53352.",
+      "Complete the enquiry form below or message us directly on WhatsApp at +91 9096948271.",
 
     form_tag: "Direct WhatsApp Enquiry",
     form_title: "Direct WhatsApp Enquiry Form",

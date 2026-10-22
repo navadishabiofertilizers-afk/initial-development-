@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, Menu, X, Globe, MapPin } from "lucide-react";
+import { MessageCircle, Menu, X, Globe, MapPin, ChevronDown } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { Language } from "../lib/translations";
 import { buildWhatsAppUrl, PRODUCT_WHATSAPP_MESSAGES } from "../lib/whatsapp";
@@ -12,6 +12,7 @@ import { BUSINESS_INFO } from "../lib/siteData";
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productDropdownOpen, setProductDropdownOpen] = useState(false);
 
   const languages: { code: Language; label: string; short: string }[] = [
     { code: "mr", label: "मराठी", short: "मराठी" },
@@ -20,16 +21,6 @@ export default function Navbar() {
   ];
 
   const quickWhatsAppUrl = buildWhatsAppUrl(PRODUCT_WHATSAPP_MESSAGES.general);
-
-  const navLinks = [
-    { href: "#home", label: t("nav_home") as string },
-    { href: "#products", label: t("nav_products") as string },
-    { href: "#gallery", label: t("nav_gallery") as string },
-    { href: "#about", label: t("nav_about") as string },
-    { href: "#benefits", label: t("nav_benefits") as string },
-    { href: "#faq", label: t("nav_faq") as string },
-    { href: "#contact", label: t("nav_contact") as string }
-  ];
 
   return (
     <header className="sticky top-0 z-50 bg-[#1b4332]/95 backdrop-blur-md border-b border-[#2d6a4f]/50 text-white transition-all shadow-md">
@@ -58,7 +49,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand Name */}
-          <Link href="#home" className="flex items-center gap-3 group">
+          <Link href="/#home" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-emerald-400 bg-emerald-950 shrink-0 shadow">
               <Image
                 src="/images/farm/brand-logo.svg"
@@ -78,16 +69,89 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1.5">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-sm font-medium text-emerald-100 hover:text-white hover:bg-emerald-800/40 rounded-lg transition-all"
+          <nav className="hidden lg:flex items-center gap-1">
+            <Link
+              href="/#home"
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:text-white hover:bg-emerald-800/40 rounded-lg transition-all"
+            >
+              {t("nav_home") as string}
+            </Link>
+
+            {/* Products Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setProductDropdownOpen(true)}
+              onMouseLeave={() => setProductDropdownOpen(false)}
+            >
+              <button
+                type="button"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-emerald-100 hover:text-white hover:bg-emerald-800/40 rounded-lg transition-all"
+                onClick={() => setProductDropdownOpen(!productDropdownOpen)}
+                aria-expanded={productDropdownOpen}
               >
-                {link.label}
-              </a>
-            ))}
+                <span>{t("nav_products") as string}</span>
+                <ChevronDown className="w-3.5 h-3.5 text-emerald-300" />
+              </button>
+
+              {productDropdownOpen && (
+                <div className="absolute top-full left-0 w-64 bg-[#143325] border border-emerald-700/80 rounded-2xl shadow-2xl py-2 mt-1 z-50 animate-in fade-in duration-150">
+                  <Link
+                    href="/bhoomi-samrata"
+                    onClick={() => setProductDropdownOpen(false)}
+                    className="block px-4 py-2.5 text-sm text-emerald-100 hover:bg-emerald-800/70 hover:text-white transition-colors"
+                  >
+                    <div className="font-semibold text-white">{t("nav_prod_bs") as string}</div>
+                    <div className="text-[11px] text-emerald-300/80">100% Pure Organic Vermicompost</div>
+                  </Link>
+
+                  <div className="h-px bg-emerald-800/60 my-1 mx-3" />
+
+                  <Link
+                    href="/bhoomi-samrata-premium"
+                    onClick={() => setProductDropdownOpen(false)}
+                    className="block px-4 py-2.5 text-sm text-emerald-100 hover:bg-emerald-800/70 hover:text-white transition-colors"
+                  >
+                    <div className="font-semibold text-amber-200">{t("nav_prod_bsp") as string}</div>
+                    <div className="text-[11px] text-emerald-300/80">Premium Graded & Sieved</div>
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/#gallery"
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:text-white hover:bg-emerald-800/40 rounded-lg transition-all"
+            >
+              {t("nav_gallery") as string}
+            </Link>
+
+            <Link
+              href="/#about"
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:text-white hover:bg-emerald-800/40 rounded-lg transition-all"
+            >
+              {t("nav_about") as string}
+            </Link>
+
+            <Link
+              href="/#benefits"
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:text-white hover:bg-emerald-800/40 rounded-lg transition-all"
+            >
+              {t("nav_benefits") as string}
+            </Link>
+
+            <Link
+              href="/#faq"
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:text-white hover:bg-emerald-800/40 rounded-lg transition-all"
+            >
+              {t("nav_faq") as string}
+            </Link>
+
+            <Link
+              href="/#contact"
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:text-white hover:bg-emerald-800/40 rounded-lg transition-all"
+            >
+              {t("nav_contact") as string}
+            </Link>
           </nav>
 
           {/* Language Selector & WhatsApp CTA */}
@@ -158,21 +222,74 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-[#163628] border-b border-emerald-800 px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top duration-200">
+        <div className="sm:hidden bg-[#163628] border-b border-emerald-800 px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in slide-in-from-top duration-200">
           <div className="grid grid-cols-2 gap-2 pb-2 border-b border-emerald-800/80">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-800/50 rounded-lg"
-              >
-                {link.label}
-              </a>
-            ))}
+            <Link
+              href="/#home"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-800/50 rounded-lg"
+            >
+              {t("nav_home") as string}
+            </Link>
+            <Link
+              href="/#gallery"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-800/50 rounded-lg"
+            >
+              {t("nav_gallery") as string}
+            </Link>
+            <Link
+              href="/#about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-800/50 rounded-lg"
+            >
+              {t("nav_about") as string}
+            </Link>
+            <Link
+              href="/#benefits"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-800/50 rounded-lg"
+            >
+              {t("nav_benefits") as string}
+            </Link>
+            <Link
+              href="/#faq"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-800/50 rounded-lg"
+            >
+              {t("nav_faq") as string}
+            </Link>
+            <Link
+              href="/#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-800/50 rounded-lg"
+            >
+              {t("nav_contact") as string}
+            </Link>
           </div>
 
-          <div className="pt-2">
+          {/* Direct Product Links for Mobile */}
+          <div className="space-y-1.5 pb-2 border-b border-emerald-800/80">
+            <p className="text-[11px] font-bold text-emerald-300 uppercase tracking-wider px-1">
+              {t("nav_products") as string}
+            </p>
+            <Link
+              href="/bhoomi-samrata"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block p-2.5 rounded-xl bg-emerald-900/60 border border-emerald-700/60 text-emerald-100 text-sm font-semibold hover:bg-emerald-800"
+            >
+              🌿 {t("nav_prod_bs") as string}
+            </Link>
+            <Link
+              href="/bhoomi-samrata-premium"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block p-2.5 rounded-xl bg-emerald-900/60 border border-emerald-700/60 text-amber-200 text-sm font-semibold hover:bg-emerald-800"
+            >
+              ⭐ {t("nav_prod_bsp") as string}
+            </Link>
+          </div>
+
+          <div className="pt-1">
             <a
               href={quickWhatsAppUrl}
               target="_blank"
@@ -181,7 +298,7 @@ export default function Navbar() {
               className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-gray-950 font-bold py-3 rounded-xl shadow-md text-sm"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
-              <span>{t("hero_cta_whatsapp")}</span>
+              <span>{t("hero_cta_whatsapp") as string}</span>
             </a>
           </div>
         </div>

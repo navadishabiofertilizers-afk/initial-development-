@@ -5,13 +5,13 @@ import { Send, CheckCircle2, AlertCircle, Copy, ExternalLink, HelpCircle } from 
 import { useLanguage } from "./LanguageContext";
 import { buildEnquiryMessage, buildWhatsAppUrl, EnquiryFormData } from "../lib/whatsapp";
 
-export default function EnquiryForm() {
+export default function EnquiryForm({ fixedProductName, fixedProductLabel }: { fixedProductName?: string; fixedProductLabel?: string } = {}) {
   const { t } = useLanguage();
 
   const [formData, setFormData] = useState<EnquiryFormData>({
     customerName: "",
     mobileNumber: "",
-    product: "",
+    product: fixedProductName ?? "",
     quantity: "",
     deliveryLocation: "",
     message: ""
@@ -23,6 +23,8 @@ export default function EnquiryForm() {
   const [submittedMessage, setSubmittedMessage] = useState<string>("");
 
   const productOptions = [
+    { value: "Bhoomi Samrata Vermicompost", label: t("form_opt_bs") as string },
+    { value: "Bhoomi Samrata Premium Vermicompost", label: t("form_opt_bsp") as string },
     { value: "Live Earthworms", label: t("form_opt_worms") as string },
     { value: "Vermicompost", label: t("form_opt_compost") as string },
     { value: "Starter Culture", label: t("form_opt_culture") as string },
@@ -163,12 +165,19 @@ export default function EnquiryForm() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Product Dropdown */}
+              {/* Product Selection */}
               <div>
                 <label htmlFor="product" className="block text-sm font-bold text-stone-800 mb-2">
                   {t("form_product_label")}
                 </label>
-                <select
+                {fixedProductName ? (
+                  <input
+                    id="product"
+                    value={fixedProductLabel ?? fixedProductName}
+                    readOnly
+                    className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-100 text-stone-800"
+                  />
+                ) : <select
                   id="product"
                   value={formData.product}
                   onChange={(e) => {
@@ -187,7 +196,7 @@ export default function EnquiryForm() {
                       {opt.label}
                     </option>
                   ))}
-                </select>
+                </select>}
                 {errors.product && (
                   <p className="mt-1.5 text-xs text-red-600 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5" />

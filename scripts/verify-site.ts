@@ -1,6 +1,6 @@
 import { TRANSLATIONS } from "../app/lib/translations";
 import { PRODUCT_WHATSAPP_MESSAGES, buildWhatsAppUrl, buildEnquiryMessage } from "../app/lib/whatsapp";
-import { PRODUCTS, BUSINESS_INFO } from "../app/lib/siteData";
+import { PRODUCTS, TWO_MAIN_PRODUCTS, BUSINESS_INFO } from "../app/lib/siteData";
 import fs from "fs";
 import path from "path";
 
@@ -20,7 +20,8 @@ function assert(condition: boolean, message: string) {
 }
 
 // Test 1: Verify Business Details & Updated Location
-assert(BUSINESS_INFO.whatsappRaw === "918767653352", "Raw WhatsApp number is 918767653352");
+assert(BUSINESS_INFO.whatsapp === "+91 9096948271", "Display WhatsApp number is +91 9096948271");
+assert(BUSINESS_INFO.whatsappRaw === "919096948271", "Raw WhatsApp number is 919096948271");
 assert(BUSINESS_INFO.owner === "Bhimashankar Biradar", "Owner is Bhimashankar Biradar");
 assert(
   BUSINESS_INFO.address.formatted === "Biradar Farm, Muchandi, Taluka Jath, District Sangli, Maharashtra, India",
@@ -43,7 +44,7 @@ for (const [key, msg] of Object.entries(expectedMessages)) {
   const k = key as keyof typeof expectedMessages;
   assert(PRODUCT_WHATSAPP_MESSAGES[k] === msg, `Exact prefilled message for ${key}`);
   const url = buildWhatsAppUrl(PRODUCT_WHATSAPP_MESSAGES[k]);
-  assert(url.startsWith("https://wa.me/918767653352?text="), `WhatsApp URL format for ${key}`);
+  assert(url.startsWith("https://wa.me/919096948271?text="), `WhatsApp URL format for ${key}`);
   assert(decodeURIComponent(url.split("text=")[1]) === msg, `URL encoding roundtrip matches for ${key}`);
 }
 
@@ -82,6 +83,19 @@ for (const lang of languages) {
 
 // Test 5: Verify Product Count
 assert(PRODUCTS.length === 4, "Configured exactly 4 core products");
+assert(TWO_MAIN_PRODUCTS.length === 2, "Configured exactly 2 distinct primary products");
+
+for (const product of TWO_MAIN_PRODUCTS) {
+  const expectedRoute = product.id === "bhoomi-samrata" ? "/bhoomi-samrata" : "/bhoomi-samrata-premium";
+  assert(product.slug === expectedRoute.slice(1) && product.targetRoute === expectedRoute, `Canonical primary product route for ${product.id}`);
+  const productMessage = PRODUCT_WHATSAPP_MESSAGES[product.whatsappKey as keyof typeof PRODUCT_WHATSAPP_MESSAGES];
+  assert(productMessage.includes(
+    product.id === "bhoomi-samrata" ? "Bhoomi Samrata Vermicompost" : "Bhoomi Samrata Premium Vermicompost"
+  ), `Product-specific WhatsApp message identifies ${product.id}`);
+  const productUrl = buildWhatsAppUrl(productMessage);
+  assert(decodeURIComponent(productUrl.split("text=")[1]) === productMessage, `WhatsApp URL roundtrip for ${product.id}`);
+  assert(fs.existsSync(path.join(process.cwd(), "public", product.image)), `Primary product image exists: ${product.image}`);
+}
 
 // Test 6: Verify Farm Placeholder Images Exist
 const requiredImages = [
@@ -92,15 +106,27 @@ const requiredImages = [
   "brand-logo.svg"
 ];
 
+const requiredPhotos = [
+  "compost-hands.jpg",
+  "earthworms-culture.jpg",
+  "farmer-field.jpg",
+  "production-beds.jpg"
+];
+
 for (const img of requiredImages) {
   const p = path.join(process.cwd(), "public/images/farm", img);
   assert(fs.existsSync(p), `Image file exists: public/images/farm/${img}`);
 }
 
+for (const photo of requiredPhotos) {
+  const p = path.join(process.cwd(), "public/images/photos", photo);
+  assert(fs.existsSync(p), `Photo file exists: public/images/photos/${photo}`);
+}
+
 // Test 7: Verify Social Links Policy (No invented Facebook or YouTube)
 assert(BUSINESS_INFO.socials.facebook === null, "Facebook is null / unconfigured");
 assert(BUSINESS_INFO.socials.youtube === null, "YouTube is null / unconfigured");
-assert(BUSINESS_INFO.socials.instagram.includes("nava_disha_foundation_muchandi"), "Instagram link configured correctly");
+assert(BUSINESS_INFO.socials.instagram === "https://www.instagram.com/nava_disha_biofertilizers/", "Instagram profile configured correctly");
 
 console.log(`\n📊 Test Summary: ${passed} Passed, ${failed} Failed.`);
 if (failed > 0) process.exit(1);
